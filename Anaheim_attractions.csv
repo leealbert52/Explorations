@@ -1,0 +1,65 @@
+﻿Name,lat,lng,type
+Downtown Disney,33.8091,-117.9237,shopping
+Disney Park ,33.8121,-117.919,theme park
+Disney California Adventure,33.8061,-117.9209,theme park
+Disney Resort,33.8105,-117.919,resort
+Disney Hotel,33.8088,-117.9262,resort
+Knott's Berry Farm,33.8443,-118.0002,theme park
+Discovery Cube,33.7703,-117.8679,discovery
+Medieval Times,33.8513,-117.9971,show
+Hang Time,33.8445,-118.0015,sport
+House of Blue,33.8067,-117.9121,show
+Flight Deck,33.806,-117.9117,sport
+Swingit Trapeze,33.8333,-117.91729,sport
+Sky Zone Tramoline Park,33.8609,-117.8076,sport
+Great Wolf Lodge Water Park,33.7792,-117.9155,waterpark
+Muzeo Museum and Cultural Center,33.8335,-117.9141,museum
+Fullerton Train Museum,33.8689,-117.9219,museum
+Marconi Automotive Museum,33.721,-117.8312,museum
+Fullerton Arboretum,33.8882,-117.8443,park
+Anaheim Garden Walk,33.804,-117.9122,park
+Anaheim Brewery,33.8327,-117.9125,winery
+The Outley of Orange,33.7827,-117.8931,shopping
+Center Street Promenade,33.8334,-117.9142,shopping
+Anaheim Packing House,33.8315,-117.9119,shopping
+Anaheim Ducks,33.8078,-117.8765,sport
+Angel Stadium,33.8003,-117.8827,sport
+Vans Skate Park,33.7351,-117.9983,park
+Round 1 Bowling and Amusement,33.774,-117.869,fun zone
+Newport Beach,33.6189,-117.9298,beach
+Huntington Beach,33.6595,-117.9988,beach
+Long Beach,33.7701,-118.1937,beach
+Laguna Beach,33.5427,-117.7854,beach
+Balboa Island,33.6073,-117.8971,shopping
+Crystal Cove State Beach,33.5739,-117.8405,beach
+Torrance ,33.8358,-118.3406,beach
+Fashion Island Shopping Mall,33.6166,-117.8759,shopping
+South Coast Plaza,33.691,-117.889,shopping
+Irvine Spectrum Center,33.65,-117.7437,shopping
+Newport Coast Villas,33.5826,-117.8427,resort
+Pelican Hill Golf Club,33.5882,-117.844,resort
+Los Angeles Airport (LAX),33.9416,-118.4085,airport
+John Wayne Airport,33.6762,-117.8675,airport
+Long Beach Airport,33.8161,-118.1513,airport
+Onario Airport,34.056,-117.5981,airport
+Hollywood Burbank Airport,34.1983,-118.3574,airport
+Terranea Resort,33.7388,-118.398,resort
+Miramonte Winery,33.5256,-117.078,winery
+Middle Ridge Winery,33.5122,-117.1658,winery
+Tranquil Heart Vineyard and Winery,33.7321,-116.9254,winery
+Wilson Creek Winery,33.5472,-117.0448,winery
+Europa Village Wineries and Resort,33.3125,-117.0504,winery
+Vitagliano Winery,33.5481,-117.0292,winery
+Emerald Creek Winery,33.4092,-116.8201,winery
+Sycamore Ranch Vineyard and Winery,34.2532,-117.2589,winery
+Blue Door Winery,33.0784,-116.6012,winery
+Leoness Cellars,33.5239,-117.0185,winery
+Seal Beach,33.7414,-118.1048,beach
+Seaside Lagoon ,33.8444,-118.3945,waterpark
+Venice,33.985,-118.3945,beach
+Manhattan Beach,33.8847,-118.4109,beach
+Hermosa Beach,33.8622,-118.3995,beach
+Huntington Beach Pier,33.6595,-117.9988,pier
+Redondo Beach Pier,33.8492,-118.3884,pier
+Santa Monica Pier ,34.0099,-118.496,pier
+Malibu Pier,34.0259,-118.7798,pier

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Explorations of Attractions in Southern California near Anaheim and Beyond</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Explorations of Attractions in Southern California near Anaheim and Beyond">
+  <meta name="author" content="ALee">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  
+  <hgroup class="auto-fadein">
+    <h1>Explorations of Attractions in Southern California near Anaheim and Beyond</h1>
+    <h2>A Shiny App for Coursera</h2>
+    <p>ALee<br/></p>
+  </hgroup>
+  
+  <article></article>  
+  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  
+  <hgroup>
+    <h2>Useage</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <ol>
+<li><p>The users begin exploring nearby attractions by choosing a distance for the 
+radius of a &quot;pink&quot; circle centered at Disney Resort, holding the number of attractions constant</p></li>
+<li><p>As the users increase the radius the number of attractions (constant) remain
+within the boundary. The users then can increase the number of attractions, in which case, some new attractions will fall outside of the circle.</p></li>
+<li><p>Remember to adjust the zoom in order to see newly included attractions. There
+are a total of sixty one attractions, including beaches, shopping malls, nearby
+airports.</p></li>
+<li><p>The ui.R and server.R files are shared in the next two slides. They are in
+GitHub as well.</p></li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-2" style="background:;">
+  
+  <hgroup>
+    <h2>User Interface</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <pre><code>sidebarLayout(
+        sidebarPanel(
+          numericInput(&quot;n_interest&quot;,
+                        &quot;Number of Attractions:&quot;, min = 1, max = 61,
+                        value = 5, step = 1),
+          h4(&quot;1000 meters = 0.6 miles&quot;),
+          sliderInput(&quot;Distance&quot;,
+                      &quot;Distance from Disneyland in meters&quot;,
+                      min = 10, max = 4000, value = 50),
+          h4(&quot;Please zoom out as you increase the radius to see 
+             attractions away from Anaheim&quot;)),
+
+        mainPanel(
+            h3(&quot;A Leaflet Interactive Map of Anaheim Attractions&quot;),
+            leafletOutput(&quot;neighborPlot&quot;, height=&quot;100vh&quot;))
+    )
+))
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  
+  <hgroup>
+    <h2>Server</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <pre><code>output$neighborPlot &lt;- renderLeaflet({
+      nrows &lt;- input$n_interest
+      df &lt;- read.csv(&quot;Anaheim_attractions.csv&quot;)
+      df_sm &lt;- df[1:nrows, ]
+      df_sm &lt;-  df_sm %&gt;% leaflet() %&gt;% 
+             addTiles() %&gt;% 
+             addMarkers(lat=df_sm$lat, lng=df_sm$lng, popup=df_sm$Name) %&gt;% 
+             addCircles(lat = 33.8091, lng= -117.9237,
+                        radius = input$Distance,
+                        color=&quot;pink&quot;, stroke = FALSE, fillOpacity = 0.6)
+      df_sm
+    })
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  
+  <hgroup>
+    <h2>Summary</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p>This simple and easy-to-use App provides a tool of exploration of attractions 
+near Anaheim and beyond in Southern California.</p>
+
+<p>This version of the App needs to be fine-tuned so that it would be much more 
+useful, such as type of attractions, the distance needs to be converted to
+mileage, instead of meters.</p>
+
+<p>A filter is recommended so that different type of attractions can be selected, 
+depending on the interest, such as winery or faraway beaches.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Useage'>
+         1
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='User Interface'>
+         2
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Server'>
+         3
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Summary'>
+         4
+      </a>
+    </li>
+    
+    </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
