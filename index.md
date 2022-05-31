@@ -20,8 +20,7 @@ radius of a "pink" circle centered at Disney Resort, holding the number of attra
 within the boundary. The users then can increase the number of attractions, in which case, some new attractions will fall outside of the circle.
 
 3. Remember to adjust the zoom in order to see newly included attractions. There
-are a total of sixty one attractions, including beaches, shopping malls, nearby
-airports.
+are a total of sixty one attractions, including beaches, shopping malls, wineries and nearby airports.
 
 4. The ui.R and server.R files are shared in the next two slides. They are in
 GitHub as well.
